@@ -1,32 +1,29 @@
 import Link from "next/link";
 import React from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
+
+import NavHamburger from "./NavHamburger";
 
 const Navbar = () => {
   const navMenu = () => {
     return (
       <>
         <li>
-          <Link href="">Home</Link>
+          <Link href="/">Home</Link>
         </li>
         <li>
           <Link href="">Listed Book</Link>
         </li>
-        <li>
-          <Link href="">Read Book</Link>
-        </li>
+        
     
       </>
     );
   };
 
   return (
-    <nav className="border-b border-gray-300 bg-white ">
-      <div className="container mx-auto relative flex items-center justify-between px-2 py-3 sm:px-4 md:px-0">
+    <nav className="sticky top-0 z-50 border-b border-gray-300 bg-white ">
+      <div className="container mx-auto bg-white relative flex items-center justify-between px-2 py-3 sm:px-4 md:px-0">
         {/* Mobile Hamburger  */}
-        <div className="text-gray-900">
-          <RxHamburgerMenu className="size-6.5 sm:size-7 md:hidden" />
-        </div>
+        <NavHamburger navMenu={navMenu()}></NavHamburger>
 
         {/* Loago for Desktop and Mobile */}
         <div className="absolute left-[42%] sm:left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0">
